@@ -1,0 +1,2794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Gopher</class>
+ <widget class="QMainWindow" name="Gopher">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1099</width>
+    <height>703</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Gopher</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Image/gopher.jpg</normaloff>Image/gopher.jpg</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="3" colspan="2">
+       <widget class="QDateTimeEdit" name="dateTimeEdit">
+        <property name="displayFormat">
+         <string>yyyy/MM/dd h:mm:ss AP</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0" colspan="2">
+       <widget class="QLabel" name="DescriptiveTitle">
+        <property name="text">
+         <string>Descriptive Title</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="Notes">
+        <property name="text">
+         <string>Notes</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1" colspan="4">
+       <widget class="QTextEdit" name="NotesText">
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>5</number>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0" colspan="5">
+       <widget class="QComboBox" name="imageMode">
+        <item>
+         <property name="text">
+          <string>Image Mode</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>TEM 2D</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>TEM Tomo</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cryo-TEM 2D</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cryo-TEM Tomo</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STEM 2D</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>STEM Tomo</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SEM 2D</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cryo-SEM</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Confocal</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="3">
+       <widget class="QComboBox" name="DataTakenBy">
+        <property name="palette">
+         <palette>
+          <active>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>127</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </active>
+          <inactive>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>127</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </inactive>
+          <disabled>
+           <colorrole role="Button">
+            <brush brushstyle="SolidPattern">
+             <color alpha="255">
+              <red>0</red>
+              <green>0</green>
+              <blue>127</blue>
+             </color>
+            </brush>
+           </colorrole>
+          </disabled>
+         </palette>
+        </property>
+        <property name="accessibleName">
+         <string/>
+        </property>
+        <property name="accessibleDescription">
+         <string/>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+        <property name="currentText">
+         <string>Data Taken By</string>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <property name="maxVisibleItems">
+         <number>10</number>
+        </property>
+        <item>
+         <property name="text">
+          <string>Data Taken By</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Beth</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bryan</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dave</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Forest</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Vinod</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="11" column="3">
+       <widget class="QPushButton" name="Cancel">
+        <property name="text">
+         <string>Cancel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="3" colspan="2">
+       <widget class="QLineEdit" name="SubsetID">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Subset ID</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="0" colspan="2">
+       <widget class="QLabel" name="SamplePrep">
+        <property name="text">
+         <string>Sample Prep</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="2" colspan="3">
+       <widget class="QTextEdit" name="SamplePrepText">
+        <property name="frameShape">
+         <enum>QFrame::WinPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Sunken</enum>
+        </property>
+        <property name="lineWidth">
+         <number>2</number>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2" colspan="3">
+       <widget class="QLineEdit" name="DescriptiveTitleText"/>
+      </item>
+      <item row="8" column="0" colspan="5">
+       <widget class="QComboBox" name="Specimen_Organism">
+        <item>
+         <property name="text">
+          <string>Specimen /Organism</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>A beta</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Actin</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Amoeba</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Amyloid</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Andes</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Anthrax</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Aspergillus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Atrocytes</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>B cell</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bacillus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Batai</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Borella</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Brucella</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Brugia</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bug</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bunya virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Bunyamware</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Burkholderia</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cancer</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Candida</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Chikungunya virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Chlamydia</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Colonic Cell</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Corona Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Coxiella</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cryptococcus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cytomegalo Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Coxiella</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dendrocytes</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dengue Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dictyostelium</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Dynal Beads</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Ebola Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Embryonic Stem Cell</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Eosinophil</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Epithelial cell</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Epstein-Barr</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Escherichia</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Exosomes</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Francisella</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Gallbladder</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Granulibacter</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hanta Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hela Cell</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hendra Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hepatitis</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>HIV</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Influenza Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Ixodes</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Klebsiella</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Langat Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Lassa Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Leishmania</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Liposome</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Lugo Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Lymphocyte</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Macrophage</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Marrow Stem Cell</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>McCoy</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Mycobacterium</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Neurons</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Neutrophils</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Newcastle Disease Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Nipah Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>None</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Noro Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Oropsylla</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Parainfluenza Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Paroxysmal Extreme Pain Disorder</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Plasmodium</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Polio Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Prions</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Red Blood Cell</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Respiratory Syncytial Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Rickettsia</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Rift Valley Fever</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Saccharomyces</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Salmonella</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Simian Hemorrhagic Fever Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Sin Nombre Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Staphylococcus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Streptococcus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>T Cell</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Tick-borne Encephalitis Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Toxoplasma</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Vaccinia</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Varicella</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Vero Cell</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Vesicular Stomatitis Virus</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>VLP</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Xenopsylla</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Yersinia</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zymosan</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="11" column="1" colspan="2">
+       <widget class="QPushButton" name="Done">
+        <property name="text">
+         <string>Done | Save</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0" colspan="5">
+       <widget class="QComboBox" name="AquisitionSoftware">
+        <item>
+         <property name="text">
+          <string>Acquisition Software</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>AMT</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Digital Micrograph</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Xplore3D</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>TIA</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>EPU</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hitachi SEM</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="5" column="0" colspan="5">
+       <widget class="QComboBox" name="Camera">
+        <item>
+         <property name="text">
+          <string>Camera</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hamamatsu XR-100</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>UltraScan 1000 Gatan CCD</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>UltraScan 4000 Gatan CCD</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>UltraScan GIF 2002</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="5">
+       <widget class="QComboBox" name="Instrument">
+        <item>
+         <property name="text">
+          <string>Instruments</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>H7500</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>SU8000</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>S5200</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Tecnai-AMT</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Tecnai-Tomo</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Krios</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>510 Meta</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="3">
+       <widget class="QLineEdit" name="ProjectID">
+        <property name="whatsThis">
+         <string/>
+        </property>
+        <property name="accessibleName">
+         <string/>
+        </property>
+        <property name="accessibleDescription">
+         <string/>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">Project ID</string>
+        </property>
+        <property name="inputMask">
+         <string/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="placeholderText">
+         <string>Project ID</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Project</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="welcome_2">
+       <layout class="QGridLayout" name="gridLayout_13">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="imageMode_Toolbox">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="contextMenuPolicy">
+           <enum>Qt::ActionsContextMenu</enum>
+          </property>
+          <property name="acceptDrops">
+           <bool>false</bool>
+          </property>
+          <property name="autoFillBackground">
+           <bool>true</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border-color: rgb(0, 0, 0);</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="tabSpacing">
+           <number>8</number>
+          </property>
+          <widget class="QWidget" name="WelcometoGopher">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>700</width>
+             <height>547</height>
+            </rect>
+           </property>
+           <attribute name="icon">
+            <iconset>
+             <normaloff>NIAID_Logo.jpg</normaloff>NIAID_Logo.jpg</iconset>
+           </attribute>
+           <attribute name="label">
+            <string>Welcome to Gopher</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="1" column="0">
+             <widget class="QTextEdit" name="Welcome">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <italic>true</italic>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="autoFillBackground">
+               <bool>true</bool>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="lineWidth">
+               <number>55</number>
+              </property>
+              <property name="tabChangesFocus">
+               <bool>true</bool>
+              </property>
+              <property name="undoRedoEnabled">
+               <bool>true</bool>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+              <property name="html">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:600; font-style:italic;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Welcome To Gopher&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Please fill out all fields that apply&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;C:\Users\hansentd\Desktop\GopherQt7\GopherQT7\Image\gopher.jpg&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="overwriteMode">
+               <bool>true</bool>
+              </property>
+              <property name="acceptRichText">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <layout class="QFormLayout" name="formLayout_2"/>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tem2D">
+       <layout class="QGridLayout" name="gridLayout_14">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="tem2D_Toolbox">
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page_8">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>TEM 2D</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>50</x>
+              <y>30</y>
+              <width>261</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_15">
+             <item row="0" column="0">
+              <widget class="QLabel" name="EnergyFilterSlitSize_TEM2D_2">
+               <property name="text">
+                <string>Energy Filter Slit Size</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="EnergyFilterSlitSize_Measurement_TEM2D_2">
+               <property name="text">
+                <string>eV</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="Voltage_TEM2D_2">
+               <property name="text">
+                <string>Voltage</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="Voltage_Text_TEM2D_2">
+               <property name="text">
+                <string>300</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="Voltage_Measurement_TEM2D_2">
+               <property name="text">
+                <string>kV</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="CsValue_TEM2D_2">
+               <property name="text">
+                <string>Cs Value</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="CsValue_Text_TEM2D_2"/>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="CsValue_Measurement_TEM2D_2">
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="EnergyFilterSlitSize_Text_TEM2D_2">
+               <property name="inputMask">
+                <string/>
+               </property>
+               <property name="text">
+                <string>25</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="temTomo">
+       <layout class="QGridLayout" name="gridLayout_16">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="temTomo_Toolbox">
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page_11">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>TEM Tomo</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>20</y>
+              <width>331</width>
+              <height>161</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_17">
+             <item row="0" column="0">
+              <widget class="QLabel" name="MaxSpecimenThickness_TEMTomo_2">
+               <property name="text">
+                <string>Actual Specimen Thickness</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="MaxSpecimenThickness_Text_TEMTomo_2"/>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="MaxSpecimenThickness_Measurement_TEMTomo_2">
+               <property name="text">
+                <string>nm</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="MaxFiducialSize_TEMTomo_2">
+               <property name="text">
+                <string>Max Fiducial Size</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="MaxFiducialSize_Text_TEMTomo_2"/>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="MaxFiducialSize_Measurement_TEMTomo_2">
+               <property name="text">
+                <string>nm</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="EnergyFilterSlitSize_TEMTomo_2">
+               <property name="text">
+                <string>Energy Filter Slit Size</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="EnergyFilterSlitSize_Text_TEMTomo_2">
+               <property name="inputMask">
+                <string>25</string>
+               </property>
+               <property name="text">
+                <string>25</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="EnergyFilterSlitSize_Measurement_TEMTomo_2">
+               <property name="text">
+                <string>eV</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="Voltage_TEMTomo_2">
+               <property name="text">
+                <string>Voltage</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="Voltage_Text_TEMTomo_2"/>
+             </item>
+             <item row="3" column="2">
+              <widget class="QLabel" name="Voltage_Measurement_TEMTomo_2">
+               <property name="text">
+                <string>kV</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="CsValue_TEMTomo_2">
+               <property name="text">
+                <string>Cs Value</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="CsValue_Text_TEMTomo_2"/>
+             </item>
+             <item row="4" column="2">
+              <widget class="QLabel" name="CsValue_Measurement_TEMTomo_2">
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="cryoTEM2D">
+       <layout class="QGridLayout" name="gridLayout_19">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="cryoTem2D_Toolbox">
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="page_12">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Vitrobot Settings</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>90</x>
+              <y>10</y>
+              <width>461</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_20">
+             <item row="0" column="0">
+              <widget class="QLabel" name="BLotForce_VitrobotSettings_2">
+               <property name="text">
+                <string>Blot Force</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="BlotForceText_VitrobotSettings_2"/>
+             </item>
+             <item row="0" column="4">
+              <widget class="QLineEdit" name="WaitText_VitrobotSettings_2"/>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="BlotText_VitrobotSettings_2"/>
+             </item>
+             <item row="1" column="4">
+              <widget class="QLineEdit" name="HumiditySetText_VitrobotSettings_2"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="DrainText_VitrobotSettings_2"/>
+             </item>
+             <item row="2" column="4">
+              <widget class="QLineEdit" name="ActualText_VitrobotSettings_2"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="waitTime_VitrobotSettings_2">
+               <property name="text">
+                <string>Wait Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLabel" name="Blot_VitrobotSettings_2">
+               <property name="text">
+                <string>Blot Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="HumiditySet_VitrobotSettings_2">
+               <property name="text">
+                <string>Humidity Set</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QLabel" name="Actual_VitrobotSettings_2">
+               <property name="text">
+                <string>Actual Humidity</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="3">
+              <widget class="QLabel" name="drainTime_VitrobotSettings_2">
+               <property name="text">
+                <string>Drain Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Sec</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="5">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Sec</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="5">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Sec</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="5">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>%</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="cryoTEM2D_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Cryo-TEM 2D</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>10</y>
+              <width>321</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_21">
+             <item row="0" column="0">
+              <widget class="QLabel" name="Dose_CryoTEM2D_2">
+               <property name="text">
+                <string>Dose</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="Dose_Text_CryoTEM2D_2"/>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="Dose_Measurement_CryoTEM2D_2">
+               <property name="text">
+                <string>e/A^2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="EnergyFilterSlitSize_CryoTEM2D_3">
+               <property name="text">
+                <string>Energy Filter Slit Size</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="EnergyFilterSlitSize_Text_CryoTEM2D_3">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="EnergyFilterSlit_Measurement_CryoTEM2D_2">
+               <property name="text">
+                <string>eV</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="Voltage_CryoTEM2D_2">
+               <property name="text">
+                <string>Voltage</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="Voltage_Text_CryoTEM2D_2"/>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="Voltage_Measurement_CryoTEM2D_2">
+               <property name="text">
+                <string>kV</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="CsValue_CryoTEM2D_2">
+               <property name="text">
+                <string>Cs Value</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="CsValue_Text_CryoTEM2D_2"/>
+             </item>
+             <item row="3" column="2">
+              <widget class="QLabel" name="CsValue_Measurement_CryoTEM2D_2">
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="cryoTEMTomo">
+       <layout class="QGridLayout" name="gridLayout_22">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="cryoTEMTomo_Toolbox">
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page_15">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Vitrobot Settings</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>20</y>
+              <width>461</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_23">
+             <item row="0" column="0">
+              <widget class="QLabel" name="BLotForce_VitrobotSettings_3">
+               <property name="text">
+                <string>Blot Force</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="BlotForceText_VitrobotSettings_3"/>
+             </item>
+             <item row="0" column="4">
+              <widget class="QLineEdit" name="WaitText_VitrobotSettings_3"/>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="BlotText_VitrobotSettings_3"/>
+             </item>
+             <item row="1" column="4">
+              <widget class="QLineEdit" name="HumiditySetText_VitrobotSettings_3"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="DrainText_VitrobotSettings_3"/>
+             </item>
+             <item row="2" column="4">
+              <widget class="QLineEdit" name="ActualText_VitrobotSettings_3"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="waitTime_VitrobotSettings_3">
+               <property name="text">
+                <string>Wait Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLabel" name="Blot_VitrobotSettings_3">
+               <property name="text">
+                <string>Blot Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="HumiditySet_VitrobotSettings_3">
+               <property name="text">
+                <string>Humidity Set</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QLabel" name="Actual_VitrobotSettings_3">
+               <property name="text">
+                <string>Actual Humidity</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="3">
+              <widget class="QLabel" name="drainTime_VitrobotSettings_3">
+               <property name="text">
+                <string>Drain Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Sec</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="5">
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Sec</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="5">
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>Sec</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="5">
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>%</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="page_16">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Cryo-TEM Tomo</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>321</width>
+              <height>181</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_24">
+             <item row="0" column="0">
+              <widget class="QLabel" name="MaxSpecimenThickness_CryoTomo_2">
+               <property name="text">
+                <string>Max Specimen Thickness</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="MaxSpecimenThickness_Text_CryoTomo_2"/>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="MaxSpecimenThickness_Measurement_CryoTomo_2">
+               <property name="text">
+                <string>nm</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="MaxFidecialSize_CryoTomo_2">
+               <property name="text">
+                <string>Max Fiducial Size</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="MaxFidecialSize_Text_CryoTomo_2"/>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="MaxFiducialSize_Measurement_CryoTomo_2">
+               <property name="text">
+                <string>nm</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="Dose_CryoTomo_2">
+               <property name="text">
+                <string>Dose</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="Dose_Text_CryoTomo_2"/>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="Dose_Measurement_CryoTomo_2">
+               <property name="text">
+                <string>e/A^2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="EnergyFilterSlitSize_CryoTomo_2">
+               <property name="text">
+                <string>Energy Filter Slit Size</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="EnergyFilterSlitSize_Text_CryoTomo_2"/>
+             </item>
+             <item row="3" column="2">
+              <widget class="QLabel" name="EnergyFilterSlit_Measurement_CryoTEMTomo_2">
+               <property name="text">
+                <string>eV</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="CsValue_CryoTomo_2">
+               <property name="text">
+                <string>Cs Value</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="CsValue_Text_CryoTomo_2"/>
+             </item>
+             <item row="4" column="2">
+              <widget class="QLabel" name="CsValue_Measurement_CryoTomo_2">
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="Voltage_CryoTomo_2">
+               <property name="text">
+                <string>Voltage</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLineEdit" name="Voltage_Text_CryoTomo_2"/>
+             </item>
+             <item row="5" column="2">
+              <widget class="QLabel" name="Voltage_Measurement_CryoTomo_2">
+               <property name="text">
+                <string>Kv</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="stem2D">
+       <layout class="QGridLayout" name="gridLayout_25">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="stem2D_Toolbox">
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page_18">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Stem 2D</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>371</width>
+              <height>231</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_26">
+             <item row="0" column="0">
+              <widget class="QLabel" name="SpotSize_STEM2D_2">
+               <property name="text">
+                <string>Spot Size</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="SpotSizeText_STEM2D_2"/>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="DwellTimeText_STEM2D_2"/>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="DwellTime_Measurement_STEM2D_2">
+               <property name="text">
+                <string>ms</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="I_STEM2D_2">
+               <property name="text">
+                <string>Current (I)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="I_Text_STEM2D_2"/>
+             </item>
+             <item row="3" column="2">
+              <widget class="QLabel" name="I_Measurement_STEM2D_2">
+               <property name="text">
+                <string>nA</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="ConvergenceAngle_STEM2D_2">
+               <property name="text">
+                <string>Convergence Angle</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="ConvergenceAngle_Text_STEM2D_2"/>
+             </item>
+             <item row="4" column="2">
+              <widget class="QLabel" name="ConvergenceAngle_Measurement_STEM2D_2">
+               <property name="text">
+                <string>mrad</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="ProbeMode_STEM2D_2">
+               <property name="text">
+                <string>Probe Mode</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QCheckBox" name="Microprobe_STEM2D_2">
+               <property name="text">
+                <string>Microprobe</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="2">
+              <widget class="QCheckBox" name="NanoProbe_STEM2D_2">
+               <property name="text">
+                <string>Nanoprobe</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="CameraLength_STEM2D_2">
+               <property name="text">
+                <string>Camera Length</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QLineEdit" name="CameraLengthText_STEM2D_2"/>
+             </item>
+             <item row="6" column="2">
+              <widget class="QLabel" name="CameraLength_Measurement_STEM2D_2">
+               <property name="text">
+                <string>mm</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="NominalMagnification_STEM2D_2">
+               <property name="text">
+                <string>Nominal Magnification</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QLineEdit" name="NominalMagnification_Text_STEM2D_2"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="DwellTime_STEM2D_2">
+               <property name="text">
+                <string>Dwell Time</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="stemTomo">
+       <layout class="QGridLayout" name="gridLayout_27">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="stemTomo_Toolbox">
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page_20">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Stem Tomo</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>311</width>
+              <height>261</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_28">
+             <item row="0" column="0">
+              <widget class="QLabel" name="MaxSectionThickness_STEMTomo_2">
+               <property name="text">
+                <string>Max Section Thickness</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="MaxSectionThickness_Text_STEMTomo_2"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="MaxFiducialSize_STEMTomo_2">
+               <property name="text">
+                <string>Max Fiducial Size</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="MaxFiducialSize_Text_STEMTomo_2"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="SpotSize_STEMTomo_2">
+               <property name="text">
+                <string>Spot Size</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="SpotSize_Text_STEMTomo_2"/>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="DwellTime_STEMTomo_2">
+               <property name="text">
+                <string>Dwell Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLineEdit" name="DwellTime_Text_STEMTomo_2"/>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="I_STEMTomo_2">
+               <property name="text">
+                <string>Current (I)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="I_Text_STEMTomo_2"/>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="ConvergenceAngle_STEMTomo_2">
+               <property name="text">
+                <string>Convergence Angle</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLineEdit" name="ConvergenceAngle_Text_STEMTomo_2"/>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="ProbeMode_STEMTomo_2">
+               <property name="text">
+                <string>Probe Mode</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QCheckBox" name="Microprobe_STEMTomo_2">
+               <property name="text">
+                <string>Microprobe</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="Detector_STEMTomo_2">
+               <property name="text">
+                <string>Detector</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1">
+              <widget class="QComboBox" name="Detector_DropBox_STEMTomo_2">
+               <item>
+                <property name="text">
+                 <string>HAADF</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>BF</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>DF</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="9" column="0">
+              <widget class="QLabel" name="CameraLength_STEMTomo_2">
+               <property name="text">
+                <string>Camera Length</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="1">
+              <widget class="QLineEdit" name="CameraLength_Text_STEMTomo_2"/>
+             </item>
+             <item row="7" column="2">
+              <widget class="QCheckBox" name="NanoProbe_STEMTomo_2">
+               <property name="text">
+                <string>Nanoprobe</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="page_21">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Page 2</string>
+           </attribute>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="sem2D">
+       <layout class="QGridLayout" name="gridLayout_29">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="sem2D_Toolbox">
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page_23">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>SEM 2D</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>240</width>
+              <height>48</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_30">
+             <item row="0" column="0">
+              <widget class="QLabel" name="Coating_SEM_2">
+               <property name="text">
+                <string>Coating</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="Coating_DropBox_SEM_2">
+               <item>
+                <property name="text">
+                 <string>Ir</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Cr</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pt</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>C</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pt/C</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="CoatingThickness_SEM_2">
+               <property name="text">
+                <string>Coating Thickness</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="CoatingThickness_Text_SEM_2"/>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="CoatingThickness_Measurement_SEM_2">
+               <property name="text">
+                <string>A</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="cryoSEM">
+       <layout class="QGridLayout" name="gridLayout_31">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="cryoSEM_Toolbox">
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="page_25">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Vitrobot Settings</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget_2">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>10</y>
+              <width>461</width>
+              <height>111</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_33">
+             <item row="0" column="0">
+              <widget class="QLabel" name="BLotForce_VitrobotSettings_4">
+               <property name="text">
+                <string>Blot Force</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="BlotForceText_VitrobotSettings_4"/>
+             </item>
+             <item row="0" column="4">
+              <widget class="QLineEdit" name="WaitText_VitrobotSettings_4"/>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="BlotText_VitrobotSettings_4"/>
+             </item>
+             <item row="1" column="4">
+              <widget class="QLineEdit" name="HumiditySetText_VitrobotSettings_4"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="DrainText_VitrobotSettings_4"/>
+             </item>
+             <item row="2" column="4">
+              <widget class="QLineEdit" name="ActualText_VitrobotSettings_4"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="waitTime_VitrobotSettings_4">
+               <property name="text">
+                <string>Wait Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLabel" name="Blot_VitrobotSettings_4">
+               <property name="text">
+                <string>Blot Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="HumiditySet_VitrobotSettings_4">
+               <property name="text">
+                <string>Humidity Set</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QLabel" name="Actual_VitrobotSettings_4">
+               <property name="text">
+                <string>Actual Humidity</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="3">
+              <widget class="QLabel" name="drainTime_VitrobotSettings_4">
+               <property name="text">
+                <string>Drain Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="2">
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>Sec</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="5">
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>Sec</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="5">
+              <widget class="QLabel" name="label_11">
+               <property name="text">
+                <string>Sec</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="5">
+              <widget class="QLabel" name="label_12">
+               <property name="text">
+                <string>%</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="cryoSEM_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Cryo-SEM</string>
+           </attribute>
+           <widget class="QWidget" name="layoutWidget">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>313</width>
+              <height>328</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_32">
+             <item row="13" column="0">
+              <widget class="QLabel" name="ViewingTemp_CryoSEM_2">
+               <property name="text">
+                <string>Viewing Temp</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="1">
+              <widget class="QLineEdit" name="ViewingTemp_Text_CryoSEM_2"/>
+             </item>
+             <item row="12" column="2">
+              <widget class="QLabel" name="SecondarySublimationTemp_Measurement_CryoSEM_2">
+               <property name="text">
+                <string>C</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="2">
+              <widget class="QLabel" name="PrimarySublimationTemp_Measurement_CryoSEM_2">
+               <property name="text">
+                <string>C</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="0">
+              <widget class="QLabel" name="SecondarySublimationTime_CryoSEM_2">
+               <property name="text">
+                <string>Secondary Sublimation Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="1">
+              <widget class="QLineEdit" name="SecondarySublimationTime_Text_CryoSEM_2"/>
+             </item>
+             <item row="11" column="2">
+              <widget class="QLabel" name="SecondarySublimationTime_Measurement_CryoSEM_2">
+               <property name="text">
+                <string>M</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="1">
+              <widget class="QLineEdit" name="SecondarySublimationTemp_Text_CryoSEM_2"/>
+             </item>
+             <item row="12" column="0">
+              <widget class="QLabel" name="SecondarySublimationTemp_CryoSEM_2">
+               <property name="text">
+                <string>Secondary Sublimation Temp</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="1">
+              <widget class="QLineEdit" name="PrimarySublimationTemp_Text_CryoSEM_2"/>
+             </item>
+             <item row="9" column="2">
+              <widget class="QLabel" name="PrimarySublimationTime_Measurement_CryoSEM_2">
+               <property name="text">
+                <string>M</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="0">
+              <widget class="QLabel" name="PrimarySublimationTemp_CryoSEM_2">
+               <property name="text">
+                <string>Primary Sublimation Temp</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="2">
+              <widget class="QLabel" name="ViewingTemp_Measurement_2">
+               <property name="text">
+                <string>C</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="SecondaryCoatingThickness_CryoSEM_2">
+               <property name="text">
+                <string>Secondary Coating Thickness</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1">
+              <widget class="QLineEdit" name="SecondaryCoatingThickness_Text_CryoSEM_2"/>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="PrimaryCoating_CryoSEM_2">
+               <property name="text">
+                <string>Primary Coating</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="PrimaryCoatingThickness_CryoSEM_2">
+               <property name="text">
+                <string>Primary Coating Thickness</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="2">
+              <widget class="QLabel" name="PrimaryCoatingThickness_Measurement_CryoSEM_2">
+               <property name="text">
+                <string>NM</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="2">
+              <widget class="QLabel" name="SecondaryCoatingThickness_Measurement_CryoSEM_2">
+               <property name="text">
+                <string>NM</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QComboBox" name="SecondaryCoating_DropBox_CryoSEM_2">
+               <item>
+                <property name="text">
+                 <string>C</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Ir</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Cr</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pt</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pt/C</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="PrimaryCoatingThickness_Text_CryoSEM_2"/>
+             </item>
+             <item row="9" column="0">
+              <widget class="QLabel" name="PrimarySublimationTime_CryoSEM_2">
+               <property name="text">
+                <string>Primary Sublimation Time</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="1">
+              <widget class="QLineEdit" name="PrimarySublimationTime_Text_CryoSEM_2"/>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="SecondaryCoating_CryoSEM_2">
+               <property name="text">
+                <string>Secondary Coating</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QComboBox" name="PrimaryCoating_DropBox_CryoSEM_2">
+               <item>
+                <property name="text">
+                 <string>Pt/C</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Ir</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Cr</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Pt</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>C</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="primaryCoatingAngle">
+               <property name="text">
+                <string>Primary Coating Angle</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="primaryCoatingAngle_Text"/>
+             </item>
+             <item row="2" column="1">
+              <widget class="QCheckBox" name="primaryCoatingAngle_Rotation">
+               <property name="text">
+                <string>Rotation</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="secondaryCoatingAngle">
+               <property name="text">
+                <string>Secondary Coating Angle</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QCheckBox" name="secondaryCoatingAngle_Rotation">
+               <property name="text">
+                <string>Rotation</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QLineEdit" name="secondaryCoatingAngle_Text"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="confocal">
+       <layout class="QGridLayout" name="gridLayout_34">
+        <item row="0" column="0">
+         <widget class="QToolBox" name="confocal_Toolbox">
+          <property name="frameShape">
+           <enum>QFrame::WinPanel</enum>
+          </property>
+          <property name="lineWidth">
+           <number>5</number>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="page_28">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>98</width>
+             <height>28</height>
+            </rect>
+           </property>
+           <attribute name="label">
+            <string>Confocal</string>
+           </attribute>
+           <widget class="QLabel" name="StillBeingWorkedOn_2">
+            <property name="geometry">
+             <rect>
+              <x>9</x>
+              <y>9</y>
+              <width>630</width>
+              <height>59</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Simplified Arabic Fixed</family>
+              <pointsize>37</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Still Being Worked On</string>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1099</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="iconSize">
+    <size>
+     <width>33</width>
+     <height>33</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionImport"/>
+   <addaction name="separator"/>
+   <addaction name="actionExport"/>
+   <addaction name="separator"/>
+   <addaction name="actionHedwig"/>
+   <addaction name="separator"/>
+   <addaction name="actionMyRTB"/>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionImport">
+   <property name="icon">
+    <iconset>
+     <normaloff>Image/import-icon.png</normaloff>Image/import-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="icon">
+    <iconset>
+     <normaloff>Image/Export-icon.png</normaloff>Image/Export-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export</string>
+   </property>
+  </action>
+  <action name="actionHedwig">
+   <property name="icon">
+    <iconset>
+     <normaloff>Image/mail.png</normaloff>Image/mail.png</iconset>
+   </property>
+   <property name="text">
+    <string>Hedwig</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset>
+     <normaloff>Image/Open-icon.png</normaloff>Image/Open-icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset>
+     <normaloff>Image/bigfolder.png</normaloff>Image/bigfolder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset>
+     <normaloff>Image/exit.png</normaloff>Image/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset>
+     <normaloff>Image/information.png</normaloff>Image/information.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionMyRTB">
+   <property name="icon">
+    <iconset>
+     <normaloff>Image/Capture.PNG</normaloff>Image/Capture.PNG</iconset>
+   </property>
+   <property name="text">
+    <string>myRTB</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>DataTakenBy</tabstop>
+  <tabstop>dateTimeEdit</tabstop>
+  <tabstop>ProjectID</tabstop>
+  <tabstop>SubsetID</tabstop>
+  <tabstop>Instrument</tabstop>
+  <tabstop>imageMode</tabstop>
+  <tabstop>Camera</tabstop>
+  <tabstop>AquisitionSoftware</tabstop>
+  <tabstop>DescriptiveTitleText</tabstop>
+  <tabstop>Specimen_Organism</tabstop>
+  <tabstop>SamplePrepText</tabstop>
+  <tabstop>NotesText</tabstop>
+  <tabstop>Done</tabstop>
+  <tabstop>Cancel</tabstop>
+  <tabstop>Welcome</tabstop>
+  <tabstop>EnergyFilterSlitSize_Text_TEM2D_2</tabstop>
+  <tabstop>Voltage_Text_TEM2D_2</tabstop>
+  <tabstop>CsValue_Text_TEM2D_2</tabstop>
+  <tabstop>MaxSpecimenThickness_Text_TEMTomo_2</tabstop>
+  <tabstop>MaxFiducialSize_Text_TEMTomo_2</tabstop>
+  <tabstop>EnergyFilterSlitSize_Text_TEMTomo_2</tabstop>
+  <tabstop>Voltage_Text_TEMTomo_2</tabstop>
+  <tabstop>CsValue_Text_TEMTomo_2</tabstop>
+  <tabstop>Dose_Text_CryoTEM2D_2</tabstop>
+  <tabstop>EnergyFilterSlitSize_Text_CryoTEM2D_3</tabstop>
+  <tabstop>Voltage_Text_CryoTEM2D_2</tabstop>
+  <tabstop>CsValue_Text_CryoTEM2D_2</tabstop>
+  <tabstop>MaxSpecimenThickness_Text_CryoTomo_2</tabstop>
+  <tabstop>MaxFidecialSize_Text_CryoTomo_2</tabstop>
+  <tabstop>Dose_Text_CryoTomo_2</tabstop>
+  <tabstop>EnergyFilterSlitSize_Text_CryoTomo_2</tabstop>
+  <tabstop>CsValue_Text_CryoTomo_2</tabstop>
+  <tabstop>Voltage_Text_CryoTomo_2</tabstop>
+  <tabstop>SpotSizeText_STEM2D_2</tabstop>
+  <tabstop>DwellTimeText_STEM2D_2</tabstop>
+  <tabstop>I_Text_STEM2D_2</tabstop>
+  <tabstop>ConvergenceAngle_Text_STEM2D_2</tabstop>
+  <tabstop>Microprobe_STEM2D_2</tabstop>
+  <tabstop>NanoProbe_STEM2D_2</tabstop>
+  <tabstop>CameraLengthText_STEM2D_2</tabstop>
+  <tabstop>NominalMagnification_Text_STEM2D_2</tabstop>
+  <tabstop>MaxSectionThickness_Text_STEMTomo_2</tabstop>
+  <tabstop>MaxFiducialSize_Text_STEMTomo_2</tabstop>
+  <tabstop>SpotSize_Text_STEMTomo_2</tabstop>
+  <tabstop>DwellTime_Text_STEMTomo_2</tabstop>
+  <tabstop>I_Text_STEMTomo_2</tabstop>
+  <tabstop>ConvergenceAngle_Text_STEMTomo_2</tabstop>
+  <tabstop>Microprobe_STEMTomo_2</tabstop>
+  <tabstop>NanoProbe_STEMTomo_2</tabstop>
+  <tabstop>Detector_DropBox_STEMTomo_2</tabstop>
+  <tabstop>CameraLength_Text_STEMTomo_2</tabstop>
+  <tabstop>Coating_DropBox_SEM_2</tabstop>
+  <tabstop>CoatingThickness_Text_SEM_2</tabstop>
+  <tabstop>BlotForceText_VitrobotSettings_4</tabstop>
+  <tabstop>BlotText_VitrobotSettings_4</tabstop>
+  <tabstop>DrainText_VitrobotSettings_4</tabstop>
+  <tabstop>WaitText_VitrobotSettings_4</tabstop>
+  <tabstop>HumiditySetText_VitrobotSettings_4</tabstop>
+  <tabstop>ActualText_VitrobotSettings_4</tabstop>
+  <tabstop>PrimaryCoating_DropBox_CryoSEM_2</tabstop>
+  <tabstop>primaryCoatingAngle_Text</tabstop>
+  <tabstop>primaryCoatingAngle_Rotation</tabstop>
+  <tabstop>PrimaryCoatingThickness_Text_CryoSEM_2</tabstop>
+  <tabstop>SecondaryCoating_DropBox_CryoSEM_2</tabstop>
+  <tabstop>secondaryCoatingAngle_Text</tabstop>
+  <tabstop>secondaryCoatingAngle_Rotation</tabstop>
+  <tabstop>SecondaryCoatingThickness_Text_CryoSEM_2</tabstop>
+  <tabstop>PrimarySublimationTime_Text_CryoSEM_2</tabstop>
+  <tabstop>PrimarySublimationTemp_Text_CryoSEM_2</tabstop>
+  <tabstop>SecondarySublimationTime_Text_CryoSEM_2</tabstop>
+  <tabstop>SecondarySublimationTemp_Text_CryoSEM_2</tabstop>
+  <tabstop>ViewingTemp_Text_CryoSEM_2</tabstop>
+  <tabstop>BlotForceText_VitrobotSettings_2</tabstop>
+  <tabstop>BlotText_VitrobotSettings_2</tabstop>
+  <tabstop>DrainText_VitrobotSettings_2</tabstop>
+  <tabstop>WaitText_VitrobotSettings_2</tabstop>
+  <tabstop>HumiditySetText_VitrobotSettings_2</tabstop>
+  <tabstop>ActualText_VitrobotSettings_2</tabstop>
+  <tabstop>BlotForceText_VitrobotSettings_3</tabstop>
+  <tabstop>BlotText_VitrobotSettings_3</tabstop>
+  <tabstop>DrainText_VitrobotSettings_3</tabstop>
+  <tabstop>WaitText_VitrobotSettings_3</tabstop>
+  <tabstop>HumiditySetText_VitrobotSettings_3</tabstop>
+  <tabstop>ActualText_VitrobotSettings_3</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
