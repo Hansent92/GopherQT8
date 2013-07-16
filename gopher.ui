@@ -866,9 +866,16 @@
        </widget>
       </item>
       <item row="0" column="0" colspan="2">
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="Project">
         <property name="text">
          <string>Project</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="Export">
+        <property name="text">
+         <string>Export</string>
         </property>
        </widget>
       </item>
@@ -932,7 +939,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>700</width>
+             <width>713</width>
              <height>547</height>
             </rect>
            </property>
@@ -982,7 +989,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Welcome To Gopher&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Please fill out all fields that apply&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;C:\Users\hansentd\Desktop\GopherQt7\GopherQT7\Image\gopher.jpg&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/new/Image/gopher.jpg&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="overwriteMode">
                <bool>true</bool>
@@ -1477,7 +1484,7 @@ p, li { white-space: pre-wrap; }
            <number>5</number>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="page_15">
            <property name="geometry">
@@ -1741,8 +1748,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>28</height>
+             <width>713</width>
+             <height>552</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1758,23 +1765,23 @@ p, li { white-space: pre-wrap; }
              </rect>
             </property>
             <layout class="QGridLayout" name="gridLayout_26">
-             <item row="0" column="0">
-              <widget class="QLabel" name="SpotSize_STEM2D_2">
-               <property name="text">
-                <string>Spot Size</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLineEdit" name="SpotSizeText_STEM2D_2"/>
-             </item>
-             <item row="1" column="1">
-              <widget class="QLineEdit" name="DwellTimeText_STEM2D_2"/>
-             </item>
              <item row="1" column="2">
               <widget class="QLabel" name="DwellTime_Measurement_STEM2D_2">
                <property name="text">
                 <string>ms</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="DwellTimeText_STEM2D_2"/>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="SpotSizeText_STEM2D_2"/>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="SpotSize_STEM2D_2">
+               <property name="text">
+                <string>Spot Size</string>
                </property>
               </widget>
              </item>
@@ -1812,27 +1819,6 @@ p, li { white-space: pre-wrap; }
                </property>
               </widget>
              </item>
-             <item row="5" column="0">
-              <widget class="QLabel" name="ProbeMode_STEM2D_2">
-               <property name="text">
-                <string>Probe Mode</string>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="1">
-              <widget class="QCheckBox" name="Microprobe_STEM2D_2">
-               <property name="text">
-                <string>Microprobe</string>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="2">
-              <widget class="QCheckBox" name="NanoProbe_STEM2D_2">
-               <property name="text">
-                <string>Nanoprobe</string>
-               </property>
-              </widget>
-             </item>
              <item row="6" column="0">
               <widget class="QLabel" name="CameraLength_STEM2D_2">
                <property name="text">
@@ -1867,6 +1853,25 @@ p, li { white-space: pre-wrap; }
                </property>
               </widget>
              </item>
+             <item row="5" column="0">
+              <widget class="QComboBox" name="probeMode_DropBox_Stem2D">
+               <item>
+                <property name="text">
+                 <string>Probe Mode</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Microprobe</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Nanoprobe</string>
+                </property>
+               </item>
+              </widget>
+             </item>
             </layout>
            </widget>
           </widget>
@@ -1892,8 +1897,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>28</height>
+             <width>713</width>
+             <height>525</height>
             </rect>
            </property>
            <attribute name="label">
@@ -1970,27 +1975,13 @@ p, li { white-space: pre-wrap; }
               <widget class="QLineEdit" name="ConvergenceAngle_Text_STEMTomo_2"/>
              </item>
              <item row="7" column="0">
-              <widget class="QLabel" name="ProbeMode_STEMTomo_2">
-               <property name="text">
-                <string>Probe Mode</string>
-               </property>
-              </widget>
-             </item>
-             <item row="7" column="1">
-              <widget class="QCheckBox" name="Microprobe_STEMTomo_2">
-               <property name="text">
-                <string>Microprobe</string>
-               </property>
-              </widget>
-             </item>
-             <item row="8" column="0">
               <widget class="QLabel" name="Detector_STEMTomo_2">
                <property name="text">
                 <string>Detector</string>
                </property>
               </widget>
              </item>
-             <item row="8" column="1">
+             <item row="7" column="1">
               <widget class="QComboBox" name="Detector_DropBox_STEMTomo_2">
                <item>
                 <property name="text">
@@ -2009,21 +2000,33 @@ p, li { white-space: pre-wrap; }
                </item>
               </widget>
              </item>
-             <item row="9" column="0">
+             <item row="8" column="0">
               <widget class="QLabel" name="CameraLength_STEMTomo_2">
                <property name="text">
                 <string>Camera Length</string>
                </property>
               </widget>
              </item>
-             <item row="9" column="1">
+             <item row="8" column="1">
               <widget class="QLineEdit" name="CameraLength_Text_STEMTomo_2"/>
              </item>
-             <item row="7" column="2">
-              <widget class="QCheckBox" name="NanoProbe_STEMTomo_2">
-               <property name="text">
-                <string>Nanoprobe</string>
-               </property>
+             <item row="6" column="0">
+              <widget class="QComboBox" name="probeMode_DropBox_StemTomo">
+               <item>
+                <property name="text">
+                 <string>Probe Mode</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Microprobe</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Nanoprobe</string>
+                </property>
+               </item>
               </widget>
              </item>
             </layout>
@@ -2064,8 +2067,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>28</height>
+             <width>713</width>
+             <height>552</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2272,8 +2275,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>28</height>
+             <width>713</width>
+             <height>525</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2539,8 +2542,8 @@ p, li { white-space: pre-wrap; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>28</height>
+             <width>713</width>
+             <height>552</height>
             </rect>
            </property>
            <attribute name="label">
@@ -2741,8 +2744,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>DwellTimeText_STEM2D_2</tabstop>
   <tabstop>I_Text_STEM2D_2</tabstop>
   <tabstop>ConvergenceAngle_Text_STEM2D_2</tabstop>
-  <tabstop>Microprobe_STEM2D_2</tabstop>
-  <tabstop>NanoProbe_STEM2D_2</tabstop>
   <tabstop>CameraLengthText_STEM2D_2</tabstop>
   <tabstop>NominalMagnification_Text_STEM2D_2</tabstop>
   <tabstop>MaxSectionThickness_Text_STEMTomo_2</tabstop>
@@ -2751,8 +2752,6 @@ p, li { white-space: pre-wrap; }
   <tabstop>DwellTime_Text_STEMTomo_2</tabstop>
   <tabstop>I_Text_STEMTomo_2</tabstop>
   <tabstop>ConvergenceAngle_Text_STEMTomo_2</tabstop>
-  <tabstop>Microprobe_STEMTomo_2</tabstop>
-  <tabstop>NanoProbe_STEMTomo_2</tabstop>
   <tabstop>Detector_DropBox_STEMTomo_2</tabstop>
   <tabstop>CameraLength_Text_STEMTomo_2</tabstop>
   <tabstop>Coating_DropBox_SEM_2</tabstop>

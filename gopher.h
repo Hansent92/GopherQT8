@@ -9,6 +9,8 @@
 #include <QJsonArray>
 #include <QList>
 #include <QIcon>
+#include<QNetworkRequest>
+#include<QNetworkReply>
 
 namespace Ui
 {
@@ -48,7 +50,9 @@ private slots:
 
     void on_actionMyRTB_triggered();
 
-    void on_pushButton_clicked();
+    void on_Export_clicked();
+
+    void on_Project_clicked();
 
 private:
     Ui::Gopher* ui;

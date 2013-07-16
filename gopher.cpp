@@ -784,8 +784,7 @@ void Gopher::on_Done_clicked()
         sessionObject6.insert("Dwell Time",ui->DwellTimeText_STEM2D_2->displayText());
         sessionObject6.insert("Current(I)",ui->I_Text_STEM2D_2->displayText());
         sessionObject6.insert("Convergence Angle",ui->ConvergenceAngle_Text_STEM2D_2->displayText());
-        sessionObject6.insert("Probe Mode Microprobe",ui->Microprobe_STEM2D_2->checkState());
-        sessionObject6.insert("Probe Mode Nanoprobe",ui->NanoProbe_STEM2D_2->checkState());
+        sessionObject6.insert("Probe Mode",ui->probeMode_DropBox_Stem2D->currentText());
         sessionObject6.insert("Camera Length", ui->CameraLengthText_STEM2D_2->displayText());
         sessionObject6.insert("Nominal Magnification",ui->NominalMagnification_Text_STEM2D_2->displayText());
 
@@ -838,8 +837,7 @@ void Gopher::on_Done_clicked()
         sessionObject7.insert("Dwell Time",ui->DwellTime_Text_STEMTomo_2->displayText());
         sessionObject7.insert("Current(I)",ui->I_Text_STEMTomo_2->displayText());
         sessionObject7.insert("Convergence Angle",ui->ConvergenceAngle_Text_STEMTomo_2->displayText());
-        sessionObject7.insert("Probe Mode Microprobe",ui->Microprobe_STEMTomo_2->checkState());
-        sessionObject7.insert("Probe Mode Nanoprobe",ui->NanoProbe_STEMTomo_2->checkState());
+        sessionObject7.insert("Probe Mode",ui->probeMode_DropBox_StemTomo->currentText());
         sessionObject7.insert("Detector",ui->Detector_DropBox_STEMTomo_2->currentText());
         sessionObject7.insert("Camera Length",ui->CameraLength_Text_STEMTomo_2->displayText());
 
@@ -1207,11 +1205,8 @@ void Gopher::on_actionImport_triggered()
         QString conVal = QJsonValue(stem2D.value("Convergence Angle")).toString();
         ui->ConvergenceAngle_Text_STEM2D_2->setText(conVal);
 
-        bool probeMicroVal = QJsonValue(stem2D.value("Probe Mode Microprobe")).Bool;
-        ui->Microprobe_STEM2D_2->setChecked(probeMicroVal);
-
-        bool probeNanoVal = QJsonValue(stem2D.value("Probe Mode Nanoprobe")).Bool;
-        ui->NanoProbe_STEM2D_2->setChecked(probeNanoVal);
+        QString proMod = QJsonValue(stem2D.value("Probe Mode")).toString();
+        ui->probeMode_DropBox_Stem2D->setCurrentText(proMod);
 
         QString camLenVal = QJsonValue(stem2D.value("Camera Length")).toString();
         ui->CameraLengthText_STEM2D_2->setText(camLenVal);
@@ -1241,11 +1236,8 @@ void Gopher::on_actionImport_triggered()
         QString conVal = QJsonValue(stemTomo.value("Convergence Angle")).toString();
         ui->ConvergenceAngle_Text_STEMTomo_2->setText(conVal);
 
-        bool probeMicroVal = QJsonValue(stemTomo.value("Probe Mode Microprobe")).Bool;
-        ui->Microprobe_STEMTomo_2->setChecked(probeMicroVal);
-
-        bool probeNanoVal = QJsonValue(stemTomo.value("Probe Mode Nanoprobe")).Bool;
-        ui->NanoProbe_STEMTomo_2->setChecked(probeNanoVal);
+        QString proMod = QJsonValue(stemTomo.value("Probe Mode")).toString();
+        ui->probeMode_DropBox_StemTomo->setCurrentText(proMod);
 
         QString decVal = QJsonValue(stemTomo.value("Detector")).toString();
         ui->Detector_DropBox_STEMTomo_2->setCurrentText(decVal);
@@ -1446,7 +1438,76 @@ void Gopher::on_imageMode_currentIndexChanged(int index)
     }
 }
 
-void Gopher::on_pushButton_clicked()
+#include "qjsonobject.h"
+#include <QJsonArray>
+#include <QJsonObject>
+#include "QObject"
+#include <QString>
+#include "QtNetwork"
+#include "QNetworkAccessManager"
+#include "QNetworkRequest"
+#include "QNetworkConfiguration"
+#include "QNetworkRequest"
+#include <QByteArray>
+#include "QtWidgets"
+#include "QtScript/QScriptEngine"
+
+void Gopher::on_Export_clicked()
+{
+
+    //Get values from fields
+    QString strDataTakenBy = ui->DataTakenBy->currentText();
+    QString strProjectID = ui->ProjectID->text();
+    QString strSubsetID = ui->SubsetID->text();
+    QString strCurrentText = ui->Instrument->currentText();
+    QString strImageMode = ui->imageMode->currentText();
+    QString strCamera = ui->Camera->currentText();
+    QString strAS = ui->AquisitionSoftware->currentText();
+    QString strDesTitle = ui->DescriptiveTitleText->text();
+    QString strSpecOrg = ui->Specimen_Organism->currentText();
+    QString strSamplePrep = ui->SamplePrepText->toPlainText();
+    QString strNotes = ui->NotesText->toPlainText();
+
+    //Assign values to QVarients
+    QVariantMap qVariant;
+    qVariant.insert("Data Taken By", QString(strDataTakenBy));
+    qVariant.insert("Project ID", QString(strProjectID));
+    qVariant.insert("Subset ID", QString(strSubsetID));
+    qVariant.insert("Instrument", QString(strCurrentText));
+    qVariant.insert("Image Mode", QString(strImageMode));
+    qVariant.insert("Camera", QString(strCamera));
+    qVariant.insert("Aquisition Software", QString(strAS));
+    qVariant.insert("Descriptive Title", QString(strDesTitle));
+    qVariant.insert("Specimen/Organism", QString(strSpecOrg));
+    qVariant.insert("Sample Prep", QString(strSamplePrep));
+    qVariant.insert("Notes",QString(strNotes));
+
+    //convert variants to qjsondocument
+    const QJsonDocument jsonDocument = QJsonDocument::fromVariant(qVariant);
+
+    //Declare bytearray and assign qjsondocument.
+    QByteArray postData;
+    postData = jsonDocument.toJson();
+
+
+
+    //Connect the site
+    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+    connect(manager, SIGNAL(finished(QNetworkReply*)),
+                this, SLOT(replyFinished(QNetworkReply*)));
+
+    manager->get(QNetworkRequest(QUrl("http://dev.onelabspace.com:8080/licenses")));
+
+    QNetworkRequest req;
+    req.setUrl(QUrl("http://dev.onelabspace.com:8080/licenses"));
+    req.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
+    manager->Accessible;
+    //Post the data
+    QNetworkReply *reply = manager->post(req,postData);
+    connect(reply,SIGNAL(uploadProgress(qint64,qint64)),this,SLOT(updateProgress(qint64,qint64)));
+}
+
+void Gopher::on_Project_clicked()
 {
     close();
 }
